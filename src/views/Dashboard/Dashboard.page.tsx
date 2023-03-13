@@ -6,8 +6,6 @@ export interface IDashboardPageProps {
 }
 
 export const DashboardPage = observer(({ foo }: IDashboardPageProps) => {
-  console.log({ foo })
-
   return (
     <div>
       <h1 className="text-3xl font-bold">Dashboard page</h1>
