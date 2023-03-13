@@ -18,10 +18,10 @@ Very opinionated starter project for building apps with React, MobX and Typescri
 - Feature folders architecture
 - Strict TS config
 - `src` folder with `~/` alias configured
-- Basic auth pages
+- Basic auth pages with Cypress E2E tests
 - [TODO] Generators for page components, store entities
 - [TODO] Grouped/sorted imports with ESLint
-- [TODO] Logger
+- Logger
 
 ## Getting started
 
