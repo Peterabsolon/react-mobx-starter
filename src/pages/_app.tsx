@@ -1,9 +1,15 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { useEffect } from 'react'
 
 import '~/global.css'
+import { app } from '~/store'
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    app.init()
+  }, [])
+
   return (
     <>
       <Head>
