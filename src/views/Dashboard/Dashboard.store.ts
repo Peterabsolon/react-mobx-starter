@@ -1,8 +1,8 @@
 import { makeAutoObservable } from 'mobx'
 
-export class AppStore {
+export class DashboardStore {
   // ====================================================
-  // Services
+  // Model
   // ====================================================
 
   // ====================================================
@@ -13,11 +13,7 @@ export class AppStore {
   }
 
   // ====================================================
-  // Public
+  // Lifecycle
   // ====================================================
-  init = async () => {
-    console.log('[AppStore] init')
-  }
+  init = () => {}
 }
-
-export const app = new AppStore()

@@ -3,8 +3,6 @@
 
 import { ROUTES } from '~/constants'
 
-export {}
-
 describe('Login', () => {
   it('can redirect to signup', () => {
     cy.visit(ROUTES.LOGIN)
