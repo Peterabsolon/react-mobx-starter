@@ -1,20 +1,17 @@
 import { sleep } from './sleep'
 
-const runTest = async (fn: Function, ms: number) => {
-  await sleep(ms)
-  fn()
-}
-
 describe('sleep', () => {
   it('resolves promise after some period of time', async () => {
     jest.useFakeTimers()
+    const spy = jest.fn()
 
-    const fn = jest.fn()
-    const promise = runTest(fn, 500)
+    const promise = sleep(10000).then(spy)
+    expect(spy).not.toBeCalled()
 
-    expect(fn).not.toBeCalled()
-    jest.advanceTimersByTime(500)
+    jest.runAllTimers()
     await promise
-    expect(fn).toBeCalled()
+    expect(spy).toBeCalled()
+
+    jest.useRealTimers()
   })
 })
