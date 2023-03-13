@@ -1,6 +1,6 @@
 # React MobX Starter
 
-Very opinionated starter project for building apps with React, MobX and Typescript
+Opinionated starter project for building apps with React, MobX and Typescript
 
 ## Tech
 

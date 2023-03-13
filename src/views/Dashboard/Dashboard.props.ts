@@ -14,6 +14,14 @@ export const getServerSideProps: GetServerSideProps<IDashboardServerSideProps> =
     const res = await fetch(`${config.API_URL}/api/hello`)
     return { props: { hello: await res.json() } }
   } catch (e) {
+    // TODO: If not logged in go here
+    return {
+      redirect: {
+        destination: '/auth/login',
+        permanent: false,
+      },
+    }
+
     // TODO: if404(e) {}
     console.log({ e })
     return { notFound: true }
