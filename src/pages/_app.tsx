@@ -4,6 +4,9 @@ import { useEffect } from 'react'
 
 import '~/global.css'
 import { app } from '~/store'
+import { config } from '~/config'
+
+console.log({ config })
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
