@@ -49,7 +49,7 @@ Start dev server
 npm run dev
 ```
 
-Run TS watcher in a separate tab
+Run Typescript compiler in watch mode in a separate tab
 
 ```
 npm run ts:watch

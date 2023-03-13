@@ -7,5 +7,10 @@ export interface IDashboardPageProps {
 
 export const DashboardPage = ({ foo }: IDashboardPageProps) => {
   console.log({ foo })
-  return <div>DashboardPage</div>
+
+  return (
+    <div>
+      <h1 className="text-3xl font-bold">Dashboard page</h1>
+    </div>
+  )
 }
