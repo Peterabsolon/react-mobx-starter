@@ -2,5 +2,3 @@
 
 - Cypress
 - Imports sort
-- Storybook
-- Logger
