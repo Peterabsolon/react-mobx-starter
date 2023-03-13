@@ -14,6 +14,7 @@ export const getServerSideProps: GetServerSideProps<IDashboardServerSideProps> =
     const res = await fetch(`${config.API_URL}/api/hello`)
     return { props: { hello: await res.json() } }
   } catch (e) {
+    // TODO: if404(e) {}
     console.log({ e })
     return { notFound: true }
   }

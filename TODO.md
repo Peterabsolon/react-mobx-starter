@@ -1,4 +1,4 @@
 # TODO
 
 - Imports sort
-- Hooks
+- Husky hooks

@@ -1,6 +1,6 @@
 import { createServer } from 'miragejs'
-import { IApi } from '~/api'
 
+import { IApi } from '~/api'
 import { config } from '~/config'
 
 export const mocks = {

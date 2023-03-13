@@ -14,14 +14,14 @@ export const DashboardPage = observer(({ hello }: IDashboardServerSideProps) => 
   useEffect(() => {
     fetch(`${config.API_URL}/api/hello`)
       .then((res) => res.json())
-      .then((data) => console.log('client', data))
+      .then((data) => console.log('[DashboardPage] hello fetched on client', data))
   }, [])
 
-  console.log('server', hello)
+  console.log('[DashboardPage] hello fetched on server', hello)
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold">Dashboard pagee</h1>
+    <div className="bg-background">
+      <h1 className="text-3xl font-bold">Dashboard page</h1>
     </div>
   )
 })
