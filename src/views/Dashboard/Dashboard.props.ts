@@ -7,7 +7,7 @@ import { IDashboardServerSideProps } from './Dashboard.types'
 import { authOptions, config } from '~/config'
 
 export const getServerSideProps: GetServerSideProps<IDashboardServerSideProps> = async (context) => {
-  // TODO: getServerSidePropsWithAuth
+  // TODO: checkAuth()
   const session = await getServerSession(context.req, context.res, authOptions)
   if (!session) {
     return {
