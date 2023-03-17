@@ -15,5 +15,7 @@ export class DashboardStore {
   // ====================================================
   // Lifecycle
   // ====================================================
-  init = () => {}
+  init = () => {
+    console.log('[DashboardStore] init')
+  }
 }

@@ -1,6 +1,6 @@
-import React, { HTMLAttributeAnchorTarget } from 'react'
 import { observer } from 'mobx-react-lite'
 import NextLink, { LinkProps } from 'next/link'
+import React, { HTMLAttributeAnchorTarget } from 'react'
 
 export interface ILinkProps extends LinkProps {
   /**

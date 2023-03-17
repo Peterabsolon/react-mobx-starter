@@ -10,6 +10,7 @@
 - Notifications
 - Build on GitHub
 - Form validations lib
+- getServerSidePropsWithAuth + getInitialServerSidePropsWithAuth
 
 - User profile page
 - Reset password page

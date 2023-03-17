@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // TODO: disable ESLint explicit any
 // TODO: Log to some external aggregator
 

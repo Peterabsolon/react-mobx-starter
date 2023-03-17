@@ -1,11 +1,23 @@
 import { GetServerSideProps } from 'next'
-
-import { config } from '~/config'
+import { getServerSession } from 'next-auth'
 
 import { mocks } from './Dashboard.mocks'
 import { IDashboardServerSideProps } from './Dashboard.types'
 
-export const getServerSideProps: GetServerSideProps<IDashboardServerSideProps> = async () => {
+import { authOptions, config } from '~/config'
+
+export const getServerSideProps: GetServerSideProps<IDashboardServerSideProps> = async (context) => {
+  // TODO: getServerSidePropsWithAuth
+  const session = await getServerSession(context.req, context.res, authOptions)
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/auth/login',
+        permanent: false,
+      },
+    }
+  }
+
   if (config.USE_MOCKS) {
     return { props: { hello: mocks.hello } }
   }

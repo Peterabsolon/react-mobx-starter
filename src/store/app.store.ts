@@ -1,9 +1,12 @@
 import { makeAutoObservable } from 'mobx'
+import { Session } from 'next-auth'
+import { getSession } from 'next-auth/react'
 
 export class AppStore {
   // ====================================================
-  // Services
+  // Model
   // ====================================================
+  session?: Session | null
 
   // ====================================================
   // Constructor
@@ -16,7 +19,7 @@ export class AppStore {
   // Public
   // ====================================================
   init = async () => {
-    console.log('[AppStore] init')
+    this.session = await getSession()
   }
 }
 

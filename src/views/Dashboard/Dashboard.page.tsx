@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
 import { observer } from 'mobx-react-lite'
-
-import { config } from '~/config'
+import React, { useEffect } from 'react'
 
 import { runMockServer } from './Dashboard.mocks'
 import { IDashboardServerSideProps } from './Dashboard.types'
+
+// import { authOptions } from '~/api/auth/[...nextauth]'
+import { config } from '~/config'
 
 if (config.USE_MOCKS) {
   runMockServer()
