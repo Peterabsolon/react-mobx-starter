@@ -1,7 +1,7 @@
 export const config = {
   API_URL: process.env.NEXT_PUBLIC_API_URL,
   PAGE_SIZE: 20,
-  USE_MOCKS: process.env.NEXT_PUBLIC_USE_MOCK_SERVER === '1',
+  USE_MOCKS: ['1', 'true'].includes(process.env.NEXT_PUBLIC_USE_MOCK_SERVER),
 }
 
 import { authOptions } from './pages/api/auth/[...nextauth]'

@@ -8,11 +8,11 @@ export const mocks = {
 }
 
 export const runMockServer = () => {
-  console.log('runMockServer')
+  createServer({
+    urlPrefix: config.API_URL,
 
-  return createServer({
     routes() {
-      this.get(`${config.API_URL}/api/hello`, () => JSON.stringify(mocks.hello))
+      this.get('/api/hello', () => JSON.stringify(mocks.hello))
       this.passthrough()
     },
   })

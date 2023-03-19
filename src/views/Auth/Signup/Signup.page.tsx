@@ -15,7 +15,7 @@ export const SignupPage = observer(({ foo }: ISignupPageProps) => {
     <div>
       <h1 className="text-3xl font-bold">Signup page</h1>
 
-      <Link href={ROUTES.LOGIN}>Login</Link>
+      <Link href={ROUTES.SIGNIN}>Login</Link>
     </div>
   )
 })
