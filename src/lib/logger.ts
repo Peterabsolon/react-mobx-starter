@@ -1,22 +1,21 @@
 /* eslint-disable */
 
-// TODO: disable ESLint explicit any
 // TODO: Log to some external aggregator
 
 export const logger = {
-  log: (message?: any) => {
-    console.log(message)
+  log: (...data: any) => {
+    console.log(data)
   },
 
-  info: (message?: any) => {
-    console.info(message)
+  info: (...data: any) => {
+    console.info(data)
   },
 
-  warn: (message?: any) => {
-    console.warn(message)
+  warn: (...data: any) => {
+    console.warn(data)
   },
 
-  error: (message?: any) => {
-    console.error(message)
+  error: (...data: any) => {
+    console.error(data)
   },
 }
