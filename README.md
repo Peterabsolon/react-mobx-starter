@@ -23,8 +23,7 @@ Opinionated starter project for building apps with React, MobX and Typescript
 - [TODO] Generators for page components, store entities
 - [TODO] Grouped/sorted imports with ESLint
 - Logger
-- `getServerSidePropsWithAuth()`
-- `getInitialServerSidePropsWithAuth()`
+- `getInitialServerSideProps()`
 
 ## Getting started
 

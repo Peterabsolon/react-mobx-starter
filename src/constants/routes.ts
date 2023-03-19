@@ -1,6 +1,9 @@
 export const ROUTES = {
-  LOGIN: '/auth/login',
+  DASHBOARD: '/',
+
+  SIGNIN: '/auth/signin',
   SIGNUP: '/auth/signup',
 
-  DASHBOARD: '/',
+  NOT_FOUND: '/404',
+  ERROR: '/error',
 }

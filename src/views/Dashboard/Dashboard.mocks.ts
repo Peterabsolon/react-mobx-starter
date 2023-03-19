@@ -7,10 +7,13 @@ export const mocks = {
   hello: { name: 'Dude' } as Awaited<ReturnType<IApi['hello']>>,
 }
 
-export const runMockServer = () =>
-  createServer({
+export const runMockServer = () => {
+  console.log('runMockServer')
+
+  return createServer({
     routes() {
       this.get(`${config.API_URL}/api/hello`, () => JSON.stringify(mocks.hello))
       this.passthrough()
     },
   })
+}

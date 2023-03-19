@@ -1,23 +1,13 @@
 import { GetServerSideProps } from 'next'
-import { getServerSession } from 'next-auth'
 
 import { mocks } from './Dashboard.mocks'
 import { IDashboardServerSideProps } from './Dashboard.types'
 
-import { authOptions, config } from '~/config'
+import { config } from '~/config'
+import { ROUTES } from '~/constants'
+import { is404 } from '~/utils'
 
-export const getServerSideProps: GetServerSideProps<IDashboardServerSideProps> = async (context) => {
-  // TODO: checkAuth()
-  const session = await getServerSession(context.req, context.res, authOptions)
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/auth/login',
-        permanent: false,
-      },
-    }
-  }
-
+export const getServerSideProps: GetServerSideProps<IDashboardServerSideProps> = async () => {
   if (config.USE_MOCKS) {
     return { props: { hello: mocks.hello } }
   }
@@ -26,16 +16,15 @@ export const getServerSideProps: GetServerSideProps<IDashboardServerSideProps> =
     const res = await fetch(`${config.API_URL}/api/hello`)
     return { props: { hello: await res.json() } }
   } catch (e) {
-    // TODO: If not logged in go here
+    if (is404(e)) {
+      return { notFound: true }
+    }
+
     return {
       redirect: {
-        destination: '/auth/login',
+        destination: ROUTES.ERROR,
         permanent: false,
       },
     }
-
-    // TODO: if404(e) {}
-    console.log({ e })
-    return { notFound: true }
   }
 }

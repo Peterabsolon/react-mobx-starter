@@ -1,3 +1,1 @@
-import { SignupPage } from '../../views'
-
-export default SignupPage
+export { SignupPage as default, getServerSideProps } from '../../views/Auth/Signup/Signup.page'

@@ -6,6 +6,7 @@ import { IDashboardServerSideProps } from './Dashboard.types'
 
 // import { authOptions } from '~/api/auth/[...nextauth]'
 import { config } from '~/config'
+import { app } from '~/store'
 
 if (config.USE_MOCKS) {
   runMockServer()
@@ -23,6 +24,10 @@ export const DashboardPage = observer(({ hello }: IDashboardServerSideProps) => 
   return (
     <div className="bg-background">
       <h1 className="text-3xl font-bold">Dashboard page</h1>
+
+      <div>{JSON.stringify(app.session)}</div>
+
+      <button onClick={() => app.logout()}>Logout</button>
     </div>
   )
 })
